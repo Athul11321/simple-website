@@ -1,1 +1,1 @@
-# simple-website developed using java script 
+# simple-website developed 
