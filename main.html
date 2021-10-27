@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" alt="" id="stars">
+        <img src="moon.png" alt="" id="moon">
+        <img src="mountains_behind.png" alt="" id="mountains_behind"> 
+        <h2 id="text">Explore Us</h2>
+        <img src="mountains_front.png" alt="" id="mountains_front">
+    </section>
+    <div class="sec">
+        <h2 id="about">About Us</h2>
+        <p>We are young in information Technology arena;Established by a group of dynamic entrepreneurs bsed at Kerala
+            ,India.After spending several years in the corporate world and experiencing all ups and downs in the career,
+            We a group of experienced web designers,developers,software engineers and trainers decided to start our own
+            venture.<br><br>
+            The company's goal is to ensure that all the customers are satisfied on time and to provide the employees a 
+            best  place to share their passion.Together we will deliver superior value for our customers and shareholders.
+            <br><br>
+            We are here to help you to the best position in the industry with our Digital Services,which will lead your
+            business into a smoot and satble position. <br><br>
+        </p>
+        <h2 id="services">Our Services</h2><br>
+        <div class="ser">
+            <div class="box">
+                <h3>Web Designing</h3><br>
+                <p>Website designing plays a virtual role,similar to that of advertisements.Your customersget impressed by 
+                    seeing your products and services which is displayed beautifully and creatively.
+                </p>
+            </div>
+            <div class="box">
+                <h3>App Development</h3><br>
+                <p>Our mobile applications are interoperable and  configure with latest platforms.We work towards developing
+                    products that has speedy access and instant availabilty.
+                </p>
+            </div>
+            <div class="box">
+                <h3>Digital Marketing</h3><br>
+                <p>Today SEO is the heart of the digital marketing,so our serach engine obtimizatiion services can  help you
+                    leverage the full potential of your website by giving it maximum exposure on serch engines
+                </p>
+            </div>
+        </div><br><br>
+        <h2 id="register">Register Now</h2><br>
+        <div class="reg">
+            <div class="reg-box">
+                <form action="" name="reg-form" id="reg-form">
+                    <input type="text" placeholder="Name" id="Name" >
+                    <input type="email" placeholder="Email id" id="Email" >
+                    <input type="text" placeholder="Phone no." id="Phone-no">
+                    <select name="Age" id="Age">
+                        <option value="" aria-placeholder="select">Select</option>
+                        <option value="Below 15">Below 15</option>
+                        <option value="15-18">15-18</option>
+                        <option value="18-21">18-21</option>
+                        <option value="Above 21">above 21</option>
+                    </select><br>
+                    <input type="button" value="Submit" id="Submit" onclick='checkRequir()'>
+                </form>
+
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        
+    </footer>
+    
+
+    <script>
+        let stars = document.getElementById('stars')
+        let moon = document.getElementById('moon')
+        let mountains_behind = document.getElementById('mountains_behind')
+        let text = document.getElementById('text')
+        let mountains_front = document.getElementById('mountains_front')
+        let header = document.querySelector('header')
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 +'px';
+            moon.style.top = value * 1 +'px';
+            mountains_behind.style.top = value * 0.5 +'px';
+            mountains_front.style.top = value * 0 +'px'; 
+            text.style.marginRight = value * 4 +'px';
+            header.style.top = value * 0.05 +'px';
+        })
+
+        function checkRequir() {
+            let x=document.forms['reg-form']['Name'].value
+            let y=document.forms['reg-form']['Email'].value
+            let z=document.forms['reg-form']['Phone-no'].value
+
+            if (x == null || x == "") {
+                alert('Please Enter Your Name')
+                return false
+            }
+            else if (y == null || y == "") {
+                alert('Please Enter Your Mail-Id')
+                return false
+            }
+            else if (z == null || z == ""){
+                alert('Please Enter Your Phone no.')
+            }
+            else{
+                let v = confirm('You Have Registerd Successfully')
+                if (v == true){
+                    return null
+                }else{
+                    val = document.getElementById('reg-form').reset()
+                    return val
+                }
+            }
+        }
+    </script>
+</body>
+</html>
